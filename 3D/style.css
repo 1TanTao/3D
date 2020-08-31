@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.img{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.divimage {
+  position: relative;
+  top: 200px;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  /* transition: all 12s linear; */
+  z-index: 9999;
+}
+
+.divimage div {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.one {
+  transform: rotateY(0deg)translateZ(100px);
+  background-color: rgb(255, 118, 19);
+}
+
+.two {
+  transform: rotateY(180deg)translateZ(100px);
+  background-color: rgb(231, 78, 72);
+}
+
+.three {
+  transform: rotateX(90deg)translateZ(100px);
+  background-color: rgb(75, 165, 165);
+}
+
+.four {
+  transform: rotateX(-90deg)translateZ(100px);
+  background-color: rgb(129, 182, 62);
+}
+
+.five {
+  transform: rotateY(90deg)translateZ(100px);
+  background-color: rgb(255, 118, 19);
+}
+
+.six {
+  transform: rotateY(-90deg)translateZ(100px);
+  background-color: rgb(244, 208, 114);
+}
+
+/* .divimage:hover {
+  transform: rotateX(360deg)rotateY(360deg);
+  -webkit-transform: rotateX(360deg)rotateY(360deg);
+}
+
+.main:hover {
+  transform: rotateX(360deg)rotateY(360deg);
+  -webkit-transform: rotateX(360deg)rotateY(360deg);
+  transform: rotateY(360deg);
+  -webkit-transform: rotateY(360deg);
+} */
+#items {
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  /* transition: all 12s linear; */
+  z-index: 999;
+}
+
+.main {
+  /* transform: rotate(45deg); */
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: all 12s linear;
+}
+
+.disc1 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border-top: 1px solid red;
+  border-left: 1px solid red;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.disc2 {
+  width: 300px;
+  height: 300px;
+  border-top: 1px solid red;
+  border-right: 1px solid red;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.square {
+  width: 300px;
+  height: 300px;
+  border-bottom: 1px solid red;
+  border-right: 1px solid red;
+  position: absolute;
+  bottom: 0;
+  transform: rotate(45deg);
+}
