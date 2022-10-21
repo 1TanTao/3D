@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport"
+    content="width=device-width, user-scalable=yes, initial-scale=0.3, maxmum-scale=1.0, minimum-scale=0.3">
+</head>
+<html>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .tree {
+    position: relative;
+    display: flex;
+    margin-top: 100px;
+
+  }
+
+  .star {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: rgb(236, 234, 167);
+    z-index: 999;
+    left: -24px;
+    clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+  }
+
+  .tree li {
+    position: absolute;
+    top: 25px;
+    width: 2px;
+    background: linear-gradient(rgba(46, 204, 113, 0), rgba(46, 204, 113, .25));
+    transform-origin: 50% 0;
+    animation: swing 4s ease-in-out infinite;
+    height: calc(var(--i)*4px);
+    animation-delay: calc(var(--i)*-0.23s);
+  }
+
+  @-webkit-keyframes swing {
+
+    0%,
+    100% {
+      transform: rotate(-30deg);
+    }
+
+    5%,
+    45% {
+      opacity: 0.25;
+    }
+
+    0%,
+    50%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      transform: rotate(30deg);
+    }
+  }
+
+  .tree li::before {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    width: 3px;
+    height: 3px;
+
+  }
+
+  .tree li:nth-child(4n)::before {
+    background-color: #DB334A;
+  }
+
+  .tree li:nth-child(4n+1)::before {
+    background-color: #FFCE54;
+  }
+
+  .tree li:nth-child(4n+2)::before {
+    background-color: #2ECC71;
+  }
+
+  .tree li:nth-child(4n+3)::before {
+    background-color: #5D9C1c;
+  }
+
+  @media(max-width:150px) {
+    .tree {
+      transform: scale(.5);
+    }
+  }
+</style>
+
+<body>
+  <div class="main">
+    <div class="tree">
+      <div class="star"></div>
+    </div>
+  </div>
+</body>
+<script>
+  let tree = document.querySelector('.tree')
+  for (var i = 0; i < 128; i++) {
+    let li = document.createElement('li')
+    li.style = "--i:" + i
+    tree.appendChild(li)
+  }
+</script>
+
+</html>
